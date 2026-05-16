@@ -44,7 +44,13 @@ st.markdown("""
     --font: 'Plus Jakarta Sans', sans-serif;
     --mono: 'JetBrains Mono', monospace;
 }
-
+/* ── Force dark mode regardless of system preference ── */
+@media (prefers-color-scheme: light) {
+    html, body, [class*="css"], .stApp {
+        background: #0a0e1a !important;
+        color: #e2e8f0 !important;
+    }
+}
 /* ── Base ── */
 html, body, [class*="css"], .stApp {
     background: var(--bg-base) !important;
