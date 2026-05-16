@@ -7,16 +7,25 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import json
 import io
+import streamlit as st
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
 # ─────────────────────────────────────────────
+st._config.set_option('theme.base', 'dark')
 st.set_page_config(
     page_title="EduPredict — Student Outcome Predictor",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded",
+    menu_items={}
 )
+
+st._config.set_option('theme.base', 'dark')
+st._config.set_option('theme.backgroundColor', '#0a0e1a')
+st._config.set_option('theme.secondaryBackgroundColor', '#111827')
+st._config.set_option('theme.textColor', '#e2e8f0')
+st._config.set_option('theme.primaryColor', '#63b3ed')
 
 # ─────────────────────────────────────────────
 # GLOBAL CSS — Aurora gradient dark theme
@@ -44,11 +53,6 @@ st.markdown("""
     --font: 'Plus Jakarta Sans', sans-serif;
     --mono: 'JetBrains Mono', monospace;
 }
-/* ── Force dark mode regardless of system preference ── */
-@media (prefers-color-scheme: light) {
-    html, body, [class*="css"], .stApp {
-        background: #0a0e1a !important;
-        color: #e2e8f0 !important;
     }
 }
 /* ── Base ── */
